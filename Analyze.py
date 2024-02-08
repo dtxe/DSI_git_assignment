@@ -1,4 +1,4 @@
-#RESOLVED FIXED 
+# FIXED AND TESTED PYTHON CODE
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -15,11 +15,11 @@ def compute_avg_delay(data, group_by: str = 'Route'):
     """
     Compute the average delay aggregated by specified column
     """
-<<<<<<< HEAD
+
     return data.groupby('Route')['Min Delay'].mean().reset_index()
-=======
+
     return data.groupby(group_by).mean().reset_index()
->>>>>>> origin/feature1
+
 
 
 def main():
