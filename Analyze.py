@@ -10,9 +10,9 @@ def import_data():
     return pd.read_csv('ttc-bus-delay-data-2023.csv')
 
 
-def compute_avg_delay(data):
+def compute_avg_delay(data, group_by: str = 'Route'):
     """
-    Compute the average delay for each route
+    Compute the average delay aggregated by specified column
     """
     return data.groupby('Route')['Min Delay'].mean().reset_index()
 
@@ -22,7 +22,7 @@ def main():
     Main function
     """
     data = import_data()
-    avg_delay = compute_avg_delay(data)
+    avg_delay = compute_avg_delay(data, group_by='Route')
 
     plt.hist(avg_delay['Min Delay'], bins=30)
     plt.title('Average Delay Distribution')
