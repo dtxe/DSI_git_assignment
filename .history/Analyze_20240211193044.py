@@ -14,7 +14,7 @@ def compute_avg_delay(data):
     """
     Compute the average delay for each route
     """
-    return data.groupby('Route')['Min Delay'].mean().reset_index()
+    return data.groupby('Route').mean().reset_index()
 
 
 def main():
@@ -27,7 +27,6 @@ def main():
     plt.hist(avg_delay['Min Delay'], bins=30)
     plt.title('Average Delay Distribution')
     plt.xlabel('Average Delay (minutes)')
-    plt.show()
 
 
 if __name__ == '__main__':
