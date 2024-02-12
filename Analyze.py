@@ -25,7 +25,7 @@ def main():
     avg_delay = compute_avg_delay(data)
 
     plt.hist(avg_delay['Min Delay'], bins=30)
-    plt.title('Average Delay Distribution')
+    plt.title('Average Delay Distribution 2023')
     plt.xlabel('Average Delay (minutes)')
 
 
